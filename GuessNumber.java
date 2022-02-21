@@ -69,11 +69,13 @@ public class GuessNumber {
         while (this.guessNumber != correctNumber) {
             int guess = scanInt.nextInt();
             setGuessNumber(guess);
-            System.out.println("You are wrong. Guess Again :-(");
-            setScore(++scoreNumber);
-            System.out.println("Attempt/s: " + getScore());
+            if (this.guessNumber != this.correctNumber) {
+                System.out.println("You are wrong. Guess Again :-(");
+                setScore(++scoreNumber);
+                System.out.println("Attempt/s: " + getScore());
+            }
         }
-        System.out.println("Your answer is correct.");
+        System.out.println("Your answer is correct (" + correctNumber + ")");
         setScore(++scoreNumber);
         System.out.println("Attempt: " + getScore());
         scanInt.close();
